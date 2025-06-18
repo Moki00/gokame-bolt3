@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf node_modules package-lock.json .expo && npm cache clean --force && npm install",
     "dev": "npx expo start",
     "build:web": "expo export --platform web",
     "lint": "expo lint"
