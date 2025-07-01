@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Alert, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Search, Zap, Calendar, Monitor, BookOpen, Phone, Shield, CircleHelp as HelpCircle } from 'lucide-react-native';
@@ -171,6 +171,18 @@ export default function HomeScreen() {
               <View style={[styles.featureBullet, { backgroundColor: colors.accent }]} />
               <Text style={styles.featureText}>Trusted by home users & businesses</Text>
             </View>
+          </View>
+        </View>
+
+        <View style={styles.poweredBySection}>
+          <View style={styles.poweredByCard}>
+            <Text style={styles.poweredByText}>Powered by</Text>
+            <Image 
+              source={{ uri: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=60&fit=crop' }}
+              style={styles.boltLogo}
+              resizeMode="contain"
+            />
+            <Text style={styles.boltText}>Bolt</Text>
           </View>
         </View>
       </ScrollView>
@@ -396,5 +408,32 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     color: colors.darkGray,
     flex: 1,
+  },
+  poweredBySection: {
+    marginBottom: 30,
+  },
+  poweredByCard: {
+    backgroundColor: colors.lightGray,
+    borderRadius: 12,
+    padding: 20,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  poweredByText: {
+    fontSize: 14,
+    fontFamily: 'Inter-Regular',
+    color: colors.gray,
+    marginRight: 8,
+  },
+  boltLogo: {
+    width: 60,
+    height: 24,
+    marginRight: 8,
+  },
+  boltText: {
+    fontSize: 16,
+    fontFamily: 'Inter-SemiBold',
+    color: colors.primary,
   },
 });
